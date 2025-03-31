@@ -3,31 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Katibi Fizyo - Yapım Aşamasında</title>
-    <link rel="stylesheet" href="style.css">
+    <title>1. Fizyoterapi ve Rehabilitasyonda Eğitim, Araştırma ve İnovasyon Kongresi 2024 - İzmir Kâtip Çelebi Üniversitesi</title>
+    <meta name="description" content="1. Fizyoterapi ve Rehabilitasyonda Eğitim, Araştırma ve İnovasyon Kongresi 2024, İzmir Kâtip Çelebi Üniversitesi Fizyoterapi ve Rehabilitation Bölümü tarafından düzenlenmektedir. Kongre programı, kayıt ve bildiri gönderimi detayları için sitemizi ziyaret edin.">
+    <meta name="keywords" content="fizyoterapi kongresi, rehabilitasyon kongresi, eğitim ve araştırma kongresi, inovasyon kongresi, IKCU FTR kongresi, 2024 kongreleri">
+    <link rel="icon" type="image/png" href="images/logo.jpg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Open Graph tags for social media -->
+    <meta property="og:title" content="1. Fizyoterapi ve Rehabilitasyonda Eğitim, Araştırma ve İnovasyon Kongresi 2024 - İzmir Kâtip Çelebi Üniversitesi">
+    <meta property="og:description" content="1. Fizyoterapi ve Rehabilitasyonda Eğitim, Araştırma ve İnovasyon Kongresi 2024 hakkında tüm detaylar için sitemizi ziyaret edin.">
+    <meta property="og:image" content="https://www.ikcuftrkongre2024.org/images/F_TR_2.jpeg">
+    <meta property="og:url" content="https://www.ikcuftrkongre2024.org/">
+    <meta property="og:type" content="website">
+    <!-- Add any other head elements here -->
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Katibi Fizyo</h1>
-            <p>Fizyoterapi Bilgi Paylaşım Platformu</p>
-        </header>
+    
+    <header>
         <nav>
-            <div class="nav-links">
-                <a href="#">Hakkımızda</a>
-                <a href="#">Kanıt Piramidi</a>
-                <a href="#">Kategoriler</a>
-                <a href="#">Blog</a>
+            <div class="navbar-container">
+                <ul>
+                    
+                    <li ><a href="hakkimizda.html">Hakkımızda</a></li>
+                    <li><a href="kategoriler.html">Kategoriler</a></li>
+                    <li><a href="kanit_piramidi.html">Kanıt Piramidi</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                    <li class="language-switcher">
+                        <a href="giris.html">TR</a> |
+                        <a href="kayit.html">EN</a>
+                    </li>
+                </ul>
             </div>
-            <div class="auth-links">
-                <a href="#">Üye Ol</a> | <a href="#">Giriş</a>
-            </div>
+            
         </nav>
-        <div class="search-container">
-            <input type="text" placeholder="Arama">
-        </div>
-        <br><br><br><br><br><br>
-        <p class="under-construction">Websitesi yapım aşamasındadır.</p>
-    </div>
+            
+
+    </header>
+
+    <main>
+       
+        <section id="home">
+            <h1>Davet!</h1>
+            <p>  Değerli meslektaşlarımız,<Br> </p>
+            <p> <strong class="bold-and-large">9-11 Mayıs 2024</strong> tarihleri arasında <strong class="bold-and-large">İzmir Katip Çelebi Üniversitesinde</strong> düzenlenecek olan <strong class="bold-and-large">1. Fizyoterapi ve Rehabilitasyonda Eğitim, Araştırma ve İnovasyon Kongresi</strong> için düzenleme kurulumuz ile büyük bir heyecanla kongre çalışmalarına başladığımızı sizlere ilan etmekten mutluluk duymaktayız. <Br></p>
+            <p>   Ana temasını <strong class="bold-and-large">Fizyoterapi ve Rehabilitasyonda İnovasyon</strong> olarak belirlediğimiz kongremizde <strong class="bold-and-large">Eğitim</strong> ve <strong class="bold-and-large">Araştırma</strong> başlıklarının yer almasını planlamaktayız.  Bilimsel program ve organizasyon için aralıksız olarak çalışmaktayız. Kongremiz ile ilgili detayları ilerleyen zamanda web sayfamızda sizlerle paylaşacağız.  <Br></p>
+            <p>   Ege’nin incisi İzmir’de baharın ve şehrin verdiği huzurlu günlerde siz değerli katılımcılarımızı kongremize katılmaya davet ediyor, sizleri aramızda görmek için sabırsızlanıyoruz. <Br><Br>
+            <p>   Kongre Düzenleme Kurulu adına,<Br></p>
+            <p>   Prof. Dr. Derya ÖZER KAYA<Br></p>
+            <p>   Doç. Dr. Sevtap GÜNAY UÇURUM<Br></p>
+            <p>   Doç. Dr. İlknur NAZ GÜRŞAN<Br></p>
+        </section>
+
+
+        <!-- More sections can be added here -->
+    </main>
+
+    <footer>
+        <p>© İzmir Katip Çelebi Üniversitesi Fizyoterapi ve Rehabilitasyon Bölümü <br>İzmir Katip Çelebi Üniversitesi Fizyoterapi ve Rehabilitasyon Uygulama Araştırma Merkezi <br><br>
+            Designed by Orhan ÖZTÜRK</p>
+    </footer>
+
+    <!-- Add your script tag just before closing the body tag -->
+    <script src="script.js"></script>
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("May 9, 2024 00:00:00").getTime();
+
+        // Update the countdown every 1 second
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").textContent = days;
+            document.getElementById("hours").textContent = hours;
+            document.getElementById("minutes").textContent = minutes;
+            document.getElementById("seconds").textContent = seconds;
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "The congress has started!";
+            }
+        }, 1000);
+    </script>
+    
 </body>
 </html>

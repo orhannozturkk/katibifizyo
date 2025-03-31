@@ -1,0 +1,562 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7fefe;
+    color: #333;
+    line-height: 1.6;
+    padding-top: 100px; /* adjust as necessary */
+}
+
+header {
+    position: fixed; /* Changed from sticky to fixed */
+    top: 0;
+    z-index: 1000;
+    background-color: #f7fefe;
+    color: #333;
+    padding: 1rem 0;
+    width: 100%; /* Ensure the header spans the full width */
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2); /* This line adds a shadow */
+    
+}
+
+nav {
+    display: flex; /* Use flexbox for the nav container */
+    align-items: center; /* Center-align the nav items vertically */
+    justify-content: center; /* Center-align the nav items horizontally */
+    padding: 0.5rem 0; /* Adjust padding as needed */
+}
+
+.navbar-logo {
+    display: flex; /* Use flexbox for logo alignment */
+    align-items: center; /* Center-align the logo vertically */
+    margin-right: 20px; /* Right margin for spacing between logo and nav items */
+}
+
+.navbar-logo img {
+    max-height: 50px; /* Maximum height for the logo */
+    width: auto; /* Width is auto to maintain aspect ratio */
+}
+
+nav ul {
+    list-style: none;
+    display: flex; /* This will lay out the nav items in a row */
+    align-items: center; /* Center-align items vertically */
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 10px; /* Adjust spacing between nav items */
+}
+
+nav ul li a {
+    color: rgb(35, 3, 3);
+    text-decoration: none;
+    font-size: 16px; /* Adjust font size as needed */
+    padding: 8px 10px; /* Padding for clickable area */
+}
+
+nav ul li a:hover {
+    color: rgb(30, 29, 29);
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    white-space: nowrap; /* Prevents text from wrapping */
+    font-size: 12px; /* Adjust the font size as needed */
+
+    z-index: 1001; /* Higher than the header's z-index */
+    top: 100%; /* Adjust this value as needed to position the dropdown right below the nav bar */
+}
+
+.dropdown-content a {
+    color: black;
+    /*padding: 12px 16px;*/
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+    white-space: nowrap; /* Prevents text from wrapping */
+    font-size: 14px; /* Adjust the font size as needed */
+}
+
+main img {
+    max-width: 80%; /* Maximum width but can be smaller */
+    height: auto; /* Maintain the natural aspect ratio */
+    display: block; /* For block level, which allows margin: auto to work */
+    margin: 0 auto; /* Center the image if not full width */
+    margin-bottom: 15px; /* Adds space below the image */
+}
+main section p {
+    margin: 0 auto; /* Adds margin on the top and bottom, auto on the sides for centering */
+    max-width: 60%; /* Adjust the maximum width as needed */
+    text-align: justify; /* Justifies the text */
+    line-height: 2.6; /* This is the line spacing */
+    text-indent: 15px;
+}
+main {
+    /* Other styles if any */
+    margin-bottom: 200px; /* Adds space below the main content */
+}
+
+#home h1,h2 {
+    text-align: center; /* Centers the text */
+    
+}
+#home h3 {
+    margin: 0 auto; /* Adds margin on the top and bottom, auto on the sides for centering */
+    max-width: 60%; /* Adjust the maximum width as needed */
+    text-align: justify; /* Justifies the text */
+    line-height: 2.6; /* This is the line spacing */
+    text-indent: 15px;
+
+    
+}
+
+#home {
+    margin-top: 20px; /* Adds space above the section, below the image */
+}
+#newpage h1 {
+    text-align: center; /* Centers the text */
+}
+#newpage h3 {
+    text-align: center; /* Centers the text */
+}
+#newpage ul li {
+    text-align: center; /* Centers the text inside the footer */
+    width: 100%; /* Ensures the footer spans the full width of the page */
+    padding: 10px 0;
+}
+
+#newpage {
+    margin-top:5px; /* Adds space above the section, below the image */
+}
+
+nav ul li.dropdown > a:after {
+    content: " \25BC"; /* Downwards arrow */
+    font-size: 0.8em; /* Adjust the size of the arrow */
+    margin-left: 5px; /* Space between text and arrow */
+}
+
+.bold-and-large {
+    font-size: 18px; /* Adjust the size as needed */
+    font-weight:bolder;
+}
+
+
+#nav-logo {
+    height: 40px; /* Adjust the size as needed */
+    vertical-align: middle; /* Align with nav items if necessary */
+    margin-right: 20px; /* Space between logo and nav items */
+}
+
+table {
+    width: 50%;
+    border-collapse: collapse;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+th {
+    background-color: #f7fefe;
+    text-align: left;
+}
+
+td {
+    text-align: left;
+    vertical-align: middle;
+}
+
+footer {
+    text-align: center; /* Centers the text inside the footer */
+    width: 100%; /* Ensures the footer spans the full width of the page */
+    padding: 20px 0;
+}
+
+.contact-info p {
+    text-align: left; /* Aligns text to the left */
+    margin-left: auto; /* Center aligns the contact info div */
+    margin-right: auto; /* Center aligns the contact info div */
+    max-width: 800px; /* Adjusts the width of the contact info area */
+}
+
+.contact-info {
+    display: block; /* Uses block to stack each piece of info */
+    margin-bottom: 10px; /* Adjusts space between lines */
+}
+
+.contact-info a {
+    color: #007bff; /* Adjusts the color of email link */
+    text-decoration: none; /* Removes underline from links */
+}
+
+.contact-info a:hover {
+    text-decoration: underline; /* Adds underline on hover for links */
+}
+
+.contact-info strong {
+    font-weight: bold; /* Makes certain text bold */
+}
+
+.google-map {
+    text-align: center; /* Centers the iframe map */
+    padding: 20px 0; /* Adds padding above and below the map */
+}
+
+.google-map iframe {
+    width: 100%; /* Sets the width of the map to fill the container */
+    max-width: 800px; /* Optional: Sets a max-width for larger screens */
+    height: 550px; /* Sets the height of the map */
+    border: none; /* Removes the border around the iframe */
+    margin: auto; /* Centers the map horizontally */
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.indented p {
+    padding-left: 10 px; /* Adjust this value to match the alignment of "Kampüsümüze" */
+    text-indent: -8 px; /* This should be the negative value of padding-left */
+}
+
+
+.language-switcher {
+    position: absolute;
+    right: 0; /* Aligns the switcher to the right edge */
+    /*top: 0;  Aligns the switcher to the top of the navbar-container */
+    padding: 8px 10px; /* Adjust padding as needed */
+}
+
+
+.language-switcher a {
+    color: rgb(35, 3, 3); /* Same as your other nav links */
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.language-switcher a:hover {
+    color: rgb(30, 29, 29); /* Hover effect */
+}
+
+#countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    margin: 20px 0; /* Space above and below the countdown */
+    padding: 20px 0; /* Space inside the countdown container */
+}
+
+.countdown-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px; /* Space between the blocks */
+    padding: 20px;
+    background-color: #333; /* This is the dark background for the blocks */
+    border-radius: 5px; /* Rounded corners for the blocks */
+    box-shadow: 0 4px 8px rgba(51, 48, 48, 0.2); /* Shadow effect */
+}
+
+.countdown-block span {
+    font-size: 1em; /* Large font size for the numbers */
+    color: white; /* White color for the numbers */
+    font-weight: bold; /* Bold font weight for the numbers */
+}
+
+.countdown-block small {
+    font-size: 0.3em; /* Smaller font size for the text */
+    color: white; /* White color for the text */
+    letter-spacing: 1px; /* Spacing between letters for the text */
+    text-transform: uppercase; /* Uppercase text for DAYS, HRS, MIN, SEC */
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        position: fixed; /* Changed from sticky to fixed */
+        top: 0;
+        z-index: 10; /* Ensure the header is above other content */
+        
+    }
+    .navbar-container {
+        display: flex; /* Use flexbox for the navbar container */
+        justify-content: space-between; /* This will distribute space between and push the language switcher to the end */
+        align-items: center; /* This will vertically align the navbar items */
+        position: relative; /* Necessary for the absolute positioning of children if needed */
+        padding-right: 10px; /* Give some space on the right */
+        overflow-x: auto; /* Only horizontal scrolling */
+        overflow-y: hidden; /* Allows dropdowns to appear over the content */
+        white-space: nowrap; /* Ensures nav items stay in one line */
+        
+    }
+
+    .language-switcher {
+        order: 2; /* Ensures that language-switcher is placed at the end */
+        padding: 8px 10px; /* Adds padding to each nav item for tap targets */
+        position: relative; /* Necessary for the absolute positioning of children if needed */
+    }
+
+    nav ul {
+        order: 1;
+        display: flex; /* Continue using flexbox for the nav list */
+        flex-wrap: nowrap; /* Prevents wrapping of nav items */
+        padding-left: 0; /* Resets padding to align items properly */
+        margin-right: auto; /* Ensures the nav list takes up the necessary space */
+        overflow-x: auto; /* Enables horizontal scrolling for small screens */
+        
+        z-index: 1003; /* Ensure the header is above other content */
+    }
+    
+
+    nav ul li {
+        display: inline-block; /* Makes li elements line up in a row */
+        margin: 0 10px; /* Adjust spacing between nav items */
+    }
+
+    /* Style for the main image to be responsive */
+    main img {
+        width: 100%; /* Scales image to the width of its container */
+        height: auto; /* Keeps the aspect ratio */
+    }
+
+
+    .dropdown {
+        position: relative; /* Context for dropdown content */
+        z-index: 1002; /* High z-index to be on top */
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1002; /* High z-index to be on top */
+        left: 0;
+        right: 0;
+        top: 100%;
+        
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block; /* Show on hover */
+        
+    }
+    main {
+        position: relative; /* Ensure main is positioned for z-index */
+        z-index: 5; /* Lower z-index than header and dropdown */
+    }
+    main section p {
+        margin: 0 auto; /* Adds margin on the top and bottom, auto on the sides for centering */
+        max-width: 85%; /* Adjust the maximum width as needed */
+        text-align: justify; /* Justifies the text */
+        line-height: 2.6; /* This is the line spacing */
+        text-indent: 15px;
+    }
+
+    .contact-info p {
+        text-align: left; /* Aligns text to the left */
+        margin-left: auto; /* Center aligns the contact info div */
+        margin-right: auto; /* Center aligns the contact info div */
+        max-width: 85%; /* Adjusts the width of the contact info area */
+    }
+
+    .tab a {
+        text-align: center;
+        width: 85%;
+        
+    }
+    .schedule-table {
+        width: 85%;
+        border-collapse: collapse;
+    }
+
+
+}
+/* Style the tab links */
+.tab {
+    overflow: hidden;
+    text-align: center;
+}
+
+  /* Style the links inside the tab */
+.tab a {
+    background-color: inherit;
+    float:none;
+    border: 1px solid #ccc;;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 25px;
+    text-align: center;
+    width: 50%;
+    
+}
+
+  /* Change background color of links on hover */
+.tab a:hover {
+    background-color: #4c7bf310;
+}
+  
+  /* Create an active/current tablink class */
+.tab a.active {
+    background-color: #4c7bf322;
+    text-align: center;
+}
+
+  /* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 6px;
+    
+}
+
+.schedule-table {
+    width: 50%;
+    border-collapse: collapse;
+}
+
+.schedule-table th, .schedule-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.schedule-table th {
+    background-color: #4C7BF3;
+    color: white;
+}
+
+.schedule-table td {
+    background-color: #FFFFFF;
+}
+
+.schedule-table .highlight {
+    background-color: #f9f692;
+}
+
+.schedule-table .time-slot {
+    background-color: #4C7BF3;
+    color: white;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 10; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 20% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 2px solid #888;
+    width: 30%; /* Could be more or less, depending on screen size */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); /* Optional: Adds a shadow to the modal */
+}
+.button-container {
+    display: flex;
+    justify-content: center; /* Centers horizontally in the flex container */
+    align-items: center; /* Centers vertically in the flex container */
+    height: 100%; /* Take the full height of the parent container (optional) */
+}
+/* Button in the modal */
+.modal button {
+    margin-top: 15px;
+    padding: 10px;
+    width: 60%; /* Set the width of the button */
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: center; /* Center the text inside the button */
+}
+
+
+/* The Close Button (x) */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+/* Adding a little transition effect for the modal */
+.modal-content {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform: scale(0)}
+    to {-webkit-transform: scale(1)}
+}
+
+@keyframes zoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
+
+
+#sponsorLogos {
+    
+    display: flex;
+    justify-content: center;
+    
+    margin-top: 0; /* No space between the main image and logos */
+    flex-wrap: nowrap; /* Ensures logos stay in one line */
+    
+}
+
+#sponsorLogos img {
+    height: 60px; /* Increased height */
+    width: auto; /* Auto width to maintain aspect ratio */
+    margin: 0;  /* Removes any default margin */
+    padding: 0; /* Removes any default padding */
+}
