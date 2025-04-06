@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ortopedi - 1. Fizyoterapi ve Rehabilitasyonda Eğitim...</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Container that holds both sidebar and main content */
+    .page-container {
+      display: flex;
+      align-items: flex-start; 
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+
+    /* Sidebar styles */
+    .sidebar {
+      width: 250px;
+      background-color: #f2f2f2;
+      padding: 20px;
+      border-right: 1px solid #ccc;
+      box-sizing: border-box;
+      /* Removed sticky positioning so the sidebar scrolls normally */
+      /* position: sticky;
+      top: 0; */
+    }
+
+    .sidebar h2 {
+      margin-top: 0;
+    }
+    .sidebar ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+    .sidebar li {
+      margin-bottom: 10px;
+    }
+    .sidebar li a {
+      text-decoration: none;
+      color: #333;
+    }
+    .sidebar li a:hover {
+      text-decoration: underline;
+    }
+
+    /* Main content area */
+    .main-content {
+      flex: 1;
+      padding: 20px;
+      box-sizing: border-box;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Article styling */
+    .article {
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+    .article h3 {
+      margin: 0 0 5px;
+      font-size: 1.2em;
+    }
+    .article p {
+      margin: 0;
+    }
+    .article a {
+      color: #009578;
+      text-decoration: none;
+    }
+    .article a:hover {
+      text-decoration: underline;
+    }
+
+    /* Pagination styling */
+    .pagination {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .pagination a {
+      display: inline-block;
+      margin: 0 5px;
+      padding: 5px 10px;
+      text-decoration: none;
+      color: #009578;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .pagination a.active {
+      background-color: #009578;
+      color: #fff;
+      border-color: #009578;
+    }
+    .pagination a:hover {
+      background-color: #007a65;
+      color: #fff;
+    }
+
+    /* Responsive: stack sidebar above main content on narrow screens */
+    @media (max-width: 768px) {
+      .page-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ccc;
+        /* Optionally, you can restore sticky behavior for mobile if desired */
+        /* position: static; */
+      }
+      .main-content {
+        max-width: 100%;
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <div class="navbar-container">
+        <ul>
+          <li><a href="hakkimizda.html">Hakkımızda</a></li>
+          <li><a href="kategoriler.html">Kategoriler</a></li>
+          <li><a href="kanit_piramidi.html">Kanıt Piramidi</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="iletisim.html">İletişim</a></li>
+          <li class="language-switcher">
+            <a href="kayit.html">Kayıt</a> | <a href="giris.html">Giriş</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <div class="page-container">
+    <!-- Left Sidebar: "Kategoriler" -->
+    <aside class="sidebar">
+      <h2>Kategoriler</h2>
+      <br>
+      <ul>
+        <li><a href="ortopedi.html">Ortopedi</a></li>
+        <li><a href="noroloji.html">Nöroloji</a></li>
+        <li><a href="kardiyo.html">Kardiyopulmoner</a></li>
+        <li><a href="sporcu.html">Sporcu Sağlığı</a></li>
+        <li><a href="pediatri.html">Pediatri</a></li>
+        <li><a href="geriatri.html">Geriatri</a></li>
+        <li><a href="kadin_sagligi.html">Kadın Sağlığı</a></li>
+        <li><a href="kas_iskelet.html">Genel Fizyoterapi</a></li>
+        <li><a href="vakalarla.html">Vakalarla Fizyoterapi</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content: Ortopedi Articles -->
+    <main class="main-content">
+      <h1>Ortopedi</h1>
+      <p>Bu sayfada ortopedik rehabilitasyonla ilgili yazılar yer almaktadır.</p>
+      <br><br>
+
+      <!-- Articles Container -->
+      <div id="articles-container">
+        <!-- Example articles: sorted alphabetically by title -->
+        <div class="article">
+          <h3><a href="articles/ortopedi/Gait_Analysis_in_Cerebral_Palsy.html">Gait Analysis in Cerebral Palsy</a></h3>
+          <p>Kısa tanım veya giriş paragrafı... <em>(a short snippet or summary here)</em></p>
+        </div>
+
+        <div class="article">
+          <h3><a href="articles/ortopedi/Gait_Definitions.html">Gait Definitions</a></h3>
+          <p>Kısa tanım veya giriş paragrafı... <em>(a short snippet or summary here)</em></p>
+        </div>
+
+        <div class="article">
+          <h3><a href="articles/ortopedi/Gait_Development_in_the_Growing_Child.html">Gait Development in the Growing Child</a></h3>
+          <p>Kısa tanım veya giriş paragrafı... <em>(a short snippet or summary here)</em></p>
+        </div>
+
+        <div class="article">
+          <h3><a href="articles/ortopedi/Gait_Deviations_in_Individuals_with_Lower_Limb_Amputations.html">Gait Deviations in Individuals with Lower Limb Amputations</a></h3>
+          <p>Kısa tanım veya giriş paragrafı... <em>(a short snippet or summary here)</em></p>
+        </div>
+
+        <div class="article">
+          <h3><a href="articles/ortopedi/Instrumented_Gait_Analysis.html">Instrumented Gait Analysis</a></h3>
+          <p>Kısa tanım veya giriş paragrafı... <em>(a short snippet or summary here)</em></p>
+        </div>
+
+        <div class="article">
+          <h3><a href="articles/ortopedi/Kaynak_Ad_6.html">Kaynak Ad 6</a></h3>
+          <p>Kısa tanım veya giriş paragrafı... <em>(a short snippet or summary here)</em></p>
+        </div>
+
+        <div class="article">
+          <h3><a href="articles/ortopedi/Kaynak_Ad_7.html">Kaynak Ad 7</a></h3>
+          <p>Kısa tanım veya giriş paragrafı... <em>(a short snippet or summary here)</em></p>
+        </div>
+
+        <div class="article">
+          <h3><a href="articles/ortopedi/Kaynak_Ad_8.html">Kaynak Ad 8</a></h3>
+          <p>Kısa tanım veya giriş paragrafı... <em>(a short snippet or summary here)</em></p>
+        </div>
+
+        <!-- Adding extra articles to demonstrate pagination -->
+        <div class="article">
+          <h3><a href="articles/ortopedi/Article_9.html">Article 9</a></h3>
+          <p>Kısa tanım veya giriş paragrafı... <em>(summary for Article 9)</em></p>
+        </div>
+        <div class="article">
+          <h3><a href="articles/ortopedi/Article_10.html">Article 10</a></h3>
+          <p>Kısa tanım veya giriş paragrafı... <em>(summary for Article 10)</em></p>
+        </div>
+        <div class="article">
+          <h3><a href="articles/ortopedi/Article_11.html">Article 11</a></h3>
+          <p>Kısa tanım veya giriş paragrafı... <em>(summary for Article 11)</em></p>
+        </div>
+        <div class="article">
+          <h3><a href="articles/ortopedi/Article_12.html">Article 12</a></h3>
+          <p>Kısa tanım veya giriş paragrafı... <em>(summary for Article 12)</em></p>
+        </div>
+      </div>
+
+      <!-- Pagination Container -->
+      <div class="pagination"></div>
+    </main>
+  </div>
+
+  <footer>
+    <p>Designed by Orhan ÖZTÜRK</p>
+  </footer>
+
+  <!-- JavaScript for Pagination -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const articles = document.querySelectorAll('#articles-container .article');
+      const articlesPerPage = 10;
+      const paginationContainer = document.querySelector('.pagination');
+      let currentPage = 1;
+      const totalPages = Math.ceil(articles.length / articlesPerPage);
+
+      // Function to display articles for a specific page
+      function showPage(page) {
+        articles.forEach((article, index) => {
+          article.style.display = 'none';
+          if (index >= (page - 1) * articlesPerPage && index < page * articlesPerPage) {
+            article.style.display = 'block';
+          }
+        });
+
+        // Update active state for pagination links
+        document.querySelectorAll('.pagination a').forEach(link => {
+          link.classList.remove('active');
+          if (parseInt(link.textContent) === page) {
+            link.classList.add('active');
+          }
+        });
+      }
+
+      // Function to create pagination links if there is more than one page
+      function createPagination() {
+        for (let i = 1; i <= totalPages; i++) {
+          const link = document.createElement('a');
+          link.href = "#";
+          link.textContent = i;
+          if (i === currentPage) {
+            link.classList.add('active');
+          }
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            currentPage = i;
+            showPage(currentPage);
+          });
+          paginationContainer.appendChild(link);
+        }
+      }
+
+      // Initial page load
+      showPage(currentPage);
+      if (totalPages > 1) {
+        createPagination();
+      }
+    });
+  </script>
+</body>
+</html>
