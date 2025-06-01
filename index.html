@@ -3,30 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>1. Fizyoterapi ve Rehabilitasyonda Eğitim, Araştırma ve İnovasyon Kongresi 2024 - İzmir Kâtip Çelebi Üniversitesi</title>
-  <meta name="description" content="1. Fizyoterapi ve Rehabilitasyonda Eğitim, Araştırma ve İnovasyon Kongresi 2024, İzmir Kâtip Çelebi Üniversitesi Fizyoterapi ve Rehabilitation Bölümü tarafından düzenlenmektedir. Kongre programı, kayıt ve bildiri gönderimi detayları için sitemizi ziyaret edin.">
-  <meta name="keywords" content="fizyoterapi kongresi, rehabilitasyon kongresi, eğitim ve araştırma kongresi, inovasyon kongresi, IKCU FTR kongresi, 2024 kongreleri">
-  <link rel="icon" type="image/png" href="images/logo.jpg">
+  <title>Katibi-Fizyo</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="fizyoterapi, rehabilitasyon, eğitim ve araştırma, inovasyon">
+  <link rel="icon" type="image/png" href="images/takibi_logo.png">
   <link rel="stylesheet" href="styles.css">
-  <!-- Open Graph tags for social media -->
-  <meta property="og:title" content="1. Fizyoterapi ve Rehabilitasyonda Eğitim, Araştırma ve İnovasyon Kongresi 2024 - İzmir Kâtip Çelebi Üniversitesi">
-  <meta property="og:description" content="1. Fizyoterapi ve Rehabilitasyonda Eğitim, Araştırma ve İnovasyon Kongresi 2024 hakkında tüm detaylar için sitemizi ziyaret edin.">
-  <meta property="og:image" content="https://www.ikcuftrkongre2024.org/images/F_TR_2.jpeg">
-  <meta property="og:url" content="https://www.ikcuftrkongre2024.org/">
-  <meta property="og:type" content="website">
+
+  <!-- ─────────────── INLINE STYLES FOR BACKGROUND & SEARCH MODAL ─────────────── -->
   <style>
-    /* Base styles */
+    /* ────────────────────────────────────────────────────────────────────────
+       1) APPLY THE REHAB IMAGE AS THE PAGE BACKGROUND
+       2) ADD SEMI-TRANSPARENT WHITE OVERLAYS TO HEADER, MAIN, FOOTER 
+       ──────────────────────────────────────────────────────────────────────── */
+
     body {
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
-      background: #fff;
+
+      /* Here we set the rehab illustration as the background */
+      /* Make sure the file is located at /images/rehab-bg.png */
+      background-image: url("images/rehab-bg.png");
+      background-size: cover;           /* Cover entire viewport */
+      background-position: center top;  /* Center horizontally, align top */
+      background-repeat: no-repeat;
+      
+      /* If the illustration is too bright/distracting, you can add a light overlay: */
+      background-color: rgba(247, 254, 254,0.550);
+      background-blend-mode: lighten;  /* Lighten blend so the illustration is faintly visible */
     }
+
+    /* Header with a semi-opaque white background, so nav links remain readable */
     header {
+      background-color: grba(247, 254, 254);
       border-bottom: 1px solid #ccc;
       padding: 10px;
     }
-    /* The container for the navbar */
+
     .navbar-container {
       display: flex;
       align-items: center;
@@ -43,51 +56,149 @@
     .navbar-container ul li a {
       text-decoration: none;
       color: #333;
-      font-weight: bold;
+      font-weight: normal;
     }
-    /* The li that will be replaced by the user greeting and logout link */
     .language-switcher {
       margin-left: auto; /* push it to the right */
     }
+
+    /* Main content area gets its own semi-transparent white “card” */
     main {
-      padding: 20px;
+      background-color: rgba(255,255,255,0);
+      margin: 30px auto;
+      max-width: 860px;
+      border-radius: 8px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0);
     }
+
+    /* Footer styled similarly */
     footer {
+      background-color: rgba(255,255,255,0.35);
       text-align: center;
       padding: 10px;
       border-top: 1px solid #ccc;
       font-size: 14px;
       color: #333;
+      position: relative;
+      z-index: 1;
     }
-    /* Home section styling */
+
+    /* Home section styling inside <main> */
     #home {
       text-align: center;
-      margin-top: 50px;
+      margin-top: 100px;
+      font-size: 40px;
     }
+
+    /* ─── SEARCH BOX ─── */
     .search-container {
       margin-top: 20px;
+      position: relative;
     }
     .search-input {
       width: 80%;
       max-width: 400px;
-      padding: 12px;
-      font-size: 16px;
-      border: 1px solid #ccc;
+      padding: 12px 20px;
+      font-size: 18px;
+      border: 2px solid #ccc;
       border-radius: 25px;
+      outline: none;
+    }
+    .search-input:focus {
+      border-color: #009578;
+      box-shadow: 0 0 5px rgba(0,149,120,0.3);
+    }
+
+    /* ─── SEARCH MODAL (HIDDEN BY DEFAULT) ─── */
+    #searchModal {
+      display: none;            /* hidden by default */
+      position: fixed;          /* sit on top of entire page */
+      z-index: 9999;            /* above everything */
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;           /* enable scroll if needed */
+      background-color: transparent; /* fully transparent overlay */
+    }
+    /* Modal Content Box */
+    #searchModal .modal-content {
+      background-color: rgba(255, 255, 255, 0.95); /* slightly translucent white */
+      margin: 8% auto;          /* 8% from top, centered horizontally */
+      padding: 20px;
+      border: 1px solid #888;
+      width: 90%;
+      max-width: 600px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      position: relative;
+    }
+    #searchModal .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+    #searchModal .modal-header h2 {
+      margin: 0;
+      font-size: 1.4em;
+      color: #009578;
+    }
+    #searchModal .modal-header .close-btn {
+      font-size: 1.4em;
+      color: #333;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+    }
+    #searchModal .modal-results {
+      max-height: 300px;
+      overflow-y: auto;
+    }
+    #searchModal .modal-results ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    #searchModal .modal-results li {
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #eee;
+    }
+    #searchModal .modal-results a {
+      text-decoration: none;
+      color: #009578;
+      font-weight: bold;
+    }
+    #searchModal .modal-results p {
+      margin: 4px 0 0 0;
+      color: #555;
+      font-size: 0.95em;
+    }
+    #searchModal .no-results {
+      text-align: center;
+      color: #555;
+      font-style: italic;
     }
   </style>
 </head>
 <body>
+  <!-- ──────────────────────────────────────────────────────────────────────────────────────────────── -->
+  <!-- Header (semi-transparent white) -->
   <header>
     <nav>
       <div class="navbar-container">
         <ul>
+          <li><a href="index.html">Ana Sayfa</a></li>
           <li><a href="hakkimizda.html">Hakkımızda</a></li>
           <li><a href="kategoriler.html">Kategoriler</a></li>
           <li><a href="kanit_piramidi.html">Kanıt Piramidi</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="iletisim.html">İletişim</a></li>
-          <!-- We'll update this li based on auth state -->
+          <!-- Bu bölüm dinamik olarak Firebase Auth ile güncellenecek -->
           <li class="language-switcher" id="user-section">
             <a href="kayit.html">Kayıt</a> | <a href="giris.html">Giriş</a>
           </li>
@@ -96,29 +207,52 @@
     </nav>
   </header>
 
+  <!-- ──────────────────────────────────────────────────────────────────────────────────────────────── -->
+  <!-- Main content (semi-transparent white) -->
   <main>
     <section id="home">
       <h1>Katibi-Fizyo</h1>
+     
+      <!-- ─────────────────────────────────────── SEARCH BOX ──────────────────────────────────────────── -->
       <div class="search-container">
-        <input type="text" class="search-input" placeholder="Arama">
+        <input
+          type="text"
+          id="searchInput"
+          class="search-input"
+          placeholder="Arama (en az 2 karakter)…"
+        >
       </div>
+      <!-- ──────────────────────────────────────────────────────────────────────────────────────────────── -->
     </section>
   </main>
 
+  <!-- ──────────────────────────────────────────────────────────────────────────────────────────────── -->
+  <!-- Search Modal (transparent overlay + semi-transparent white box) -->
+  <div id="searchModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Arama Sonuçları</h2>
+        <button class="close-btn" id="closeModal">&times;</button>
+      </div>
+      <div class="modal-results" id="modalResults">
+        <!-- JavaScript bu alana <ul> ve <li> ile sonuçları ekleyecek -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ──────────────────────────────────────────────────────────────────────────────────────────────── -->
+  <!-- Footer (semi-transparent white) -->
+   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
   <footer>
     <p>Designed by Orhan ÖZTÜRK</p>
   </footer>
 
-  <!-- Optional external script if you have script.js -->
-  <script src="script.js"></script>
-
-  <!-- Firebase Auth Script -->
+  <!-- Firebase Auth Script (Mevcut kodunuzu koruyun) -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
     import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-analytics.js";
     import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
 
-    // Your Firebase config
     const firebaseConfig = {
       apiKey: "AIzaSyD9yRfHqBqs9tsFFUX5oNATFq21azVwj5U",
       authDomain: "katibi-fizyo.firebaseapp.com",
@@ -129,28 +263,22 @@
       measurementId: "G-SF6JLFQQQ0"
     };
 
-    // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
     const auth = getAuth(app);
 
-    // Watch auth state changes
     onAuthStateChanged(auth, (user) => {
       const userSection = document.getElementById("user-section");
       if (user) {
-        // Use displayName if available; else fallback to email
         const displayName = user.displayName || user.email;
-        // Replace the content with "Merhaba" and "Çıkış" in link style
         userSection.innerHTML = `
           <a href="#">Merhaba, ${displayName}!</a> | <a href="#" id="logoutLink">Çıkış</a>
         `;
-        // Make the "Çıkış" link log the user out
         const logoutLink = document.getElementById("logoutLink");
         logoutLink.addEventListener("click", (e) => {
           e.preventDefault();
           signOut(auth)
             .then(() => {
-              // After sign out, you can redirect or reload
               window.location.href = "giris.html";
             })
             .catch((error) => {
@@ -158,10 +286,108 @@
             });
         });
       } else {
-        // If user is not signed in, revert to the default
         userSection.innerHTML = `<a href="kayit.html">Kayıt</a> | <a href="giris.html">Giriş</a>`;
       }
     });
   </script>
+
+  <!-- ──────────────────────────────────────────────────────────────────────────────────────────────── -->
+  <!--  BU BLOK, searchData.json’ı FETÇ EDİP ARAMA İŞLEVİNİ YÜRÜTECEK  -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // 1) BOŞ BİR searchData TANIMLA, SONRA JSON'DAN DOLDUR.
+      let searchData = [];
+
+      // 2) JSON DOSYASINI ÇEK (aynı dizinde searchData.json varmış gibi)
+      fetch("searchData.json")
+        .then(response => {
+          if (!response.ok) {
+            throw new Error("searchData.json yüklenemedi: " + response.status);
+          }
+          return response.json();
+        })
+        .then(data => {
+          searchData = data; 
+        })
+        .catch(err => {
+          console.error("searchData.json yüklenirken hata oluştu:", err);
+        });
+
+      // 3) Arama ile ilgili DOM referanslarını al
+      const searchInput   = document.getElementById("searchInput");
+      const searchModal   = document.getElementById("searchModal");
+      const closeModalBtn = document.getElementById("closeModal");
+      const modalResults  = document.getElementById("modalResults");
+
+      // 4) Yardımcı fonksiyon: Küçük‐büyük harf duyarsız kontrol
+      function includesInsensitive(text, term) {
+        return text.toLowerCase().includes(term.toLowerCase());
+      }
+
+      // 5) Modal’ı aç/kapat fonksiyonları
+      function openModal() {
+        searchModal.style.display = "block";
+      }
+      function closeModal() {
+        searchModal.style.display = "none";
+        modalResults.innerHTML = ""; // Önceki sonuçları temizle
+      }
+
+      // 6) “keyup” event: Kullanıcı her tuş bastığında
+      searchInput.addEventListener("keyup", function(e) {
+        const query = e.target.value.trim();
+        if (query.length < 2) {
+          closeModal();
+          return;
+        }
+
+        if (searchData.length === 0) {
+          modalResults.innerHTML = `<p class="no-results">Yükleniyor… Lütfen birkaç saniye bekleyin.</p>`;
+          openModal();
+          return;
+        }
+
+        // 7) searchData içinde title ya da snippet içinde arama
+        const matches = searchData.filter(item => {
+          return (
+            includesInsensitive(item.title,    query) ||
+            includesInsensitive(item.snippet,  query)
+          );
+        });
+
+        // 8) Sonuçları modalResults içine yazdır
+        modalResults.innerHTML = "";
+        if (matches.length === 0) {
+          modalResults.innerHTML = `<p class="no-results">Aradığınız kritere uygun sonuç bulunamadı.</p>`;
+        } else {
+          const ul = document.createElement("ul");
+          matches.forEach(item => {
+            const li = document.createElement("li");
+            li.innerHTML = `
+              <a href="${item.url}" target="_blank">${item.title}</a>
+              <p>${item.snippet}</p>
+              <small style="color:#888;">Kategori: ${item.category}</small>
+            `;
+            ul.appendChild(li);
+          });
+          modalResults.appendChild(ul);
+        }
+
+        // 9) Modal’ı göster
+        openModal();
+      });
+
+      // 10) “×” butonuna tıklandığında modal’ı kapat
+      closeModalBtn.addEventListener("click", closeModal);
+
+      // 11) Ekranın karartılmış arka planına tıklanırsa da kapat
+      window.addEventListener("click", function(event) {
+        if (event.target === searchModal) {
+          closeModal();
+        }
+      });
+    });
+  </script>
+  <!-- ──────────────────────────────────────────────────────────────────────────────────────────────── -->
 </body>
 </html>

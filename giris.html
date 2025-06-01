@@ -20,7 +20,7 @@
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
-      background: #fff;
+      background: rgba(247, 254, 254);
     }
     header {
       border-bottom: 1px solid #ccc;
@@ -133,6 +133,7 @@
   <header>
     <nav>
       <ul>
+        <li><a href="index.html">Ana Sayfa</a></li>
         <li><a href="hakkimizda.html">Hakkımızda</a></li>
         <li><a href="kategoriler.html">Kategoriler</a></li>
         <li><a href="kanit_piramidi.html">Kanıt Piramidi</a></li>
@@ -147,26 +148,26 @@
 
   <main>
     <div class="login-container">
-      <h1>Log in</h1>
+      <h1>Giriş</h1>
       <!-- Login Form -->
       <form id="loginForm">
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="text" id="email" class="input-field" placeholder="Enter your username" required />
+          <input type="text" id="email" class="input-field" placeholder="E-mail Adresi" required />
         </div>
         <div class="form-group">
           <label for="password">Password</label>
-          <input type="password" id="password" class="input-field" placeholder="Enter your password" required />
+          <input type="password" id="password" class="input-field" placeholder="Şifre" required />
         </div>
         <div class="checkbox-group">
           <input type="checkbox" id="keepLoggedIn" />
-          <label for="keepLoggedIn">Keep me logged in</label>
+          <label for="keepLoggedIn">Beni Hatırla</label>
         </div>
-        <button type="submit" class="login-button">Log in</button>
+        <button type="submit" class="login-button">Giriş</button>
       </form>
       <div class="links">
-        <a href="#">Help with logging in</a>
-        <a href="#" id="forgotPasswordLink">Forgot your password?</a>
+        
+        <a href="#" id="forgotPasswordLink">Şifremi Unuttum.</a>
       </div>
     </div>
   </main>
@@ -225,7 +226,7 @@
         // Sign in the user using Firebase Auth
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
         const user = userCredential.user;
-        alert("Login successful! User: " + user.email);
+        alert("Giriş başarılı! Kullanıcı: " + user.email);
         // Redirect to index.html upon successful login
         window.location.href = "index.html";
       } catch (error) {
@@ -239,12 +240,12 @@
       e.preventDefault();
       const email = document.getElementById('email').value.trim();
       if (!email) {
-        alert("Please enter your email above first, then click 'Forgot your password?'");
+        alert("Lütfen önce yukarıdaki e-posta adresinizi girin.");
         return;
       }
       try {
         await sendPasswordResetEmail(auth, email);
-        alert("Password reset email sent to: " + email);
+        alert("Şifre sıfırlama e-postası şu adrese gönderildi: " + email);
       } catch (error) {
         alert("Error: " + error.message);
       }
