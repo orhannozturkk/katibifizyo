@@ -8,6 +8,10 @@
   <meta name="keywords" content="fizyoterapi, rehabilitasyon, eğitim ve araştırma, inovasyon">
   <link rel="icon" type="image/png" href="images/takibi_logo.png">
   <link rel="stylesheet" href="styles.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
 
   <!-- ─────────────── INLINE STYLES FOR BACKGROUND & SEARCH MODAL ─────────────── -->
   <style>
@@ -33,34 +37,7 @@
       background-blend-mode: lighten;  /* Lighten blend so the illustration is faintly visible */
     }
 
-    /* Header with a semi-opaque white background, so nav links remain readable */
-    header {
-      background-color: grba(247, 254, 254);
-      border-bottom: 1px solid #ccc;
-      padding: 10px;
-    }
-
-    .navbar-container {
-      display: flex;
-      align-items: center;
-    }
-    .navbar-container ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      width: 100%;
-      align-items: center;
-      gap: 20px;
-    }
-    .navbar-container ul li a {
-      text-decoration: none;
-      color: #333;
-      font-weight: normal;
-    }
-    .language-switcher {
-      margin-left: auto; /* push it to the right */
-    }
+    
 
     /* Main content area gets its own semi-transparent white “card” */
     main {
@@ -85,11 +62,17 @@
     }
 
     /* Home section styling inside <main> */
+      #home h1 {
+      font-family: 'Roboto', sans-serif;
+      color: rgb(3, 84, 93);
+    }
+    
     #home {
       text-align: center;
       margin-top: 100px;
       font-size: 40px;
     }
+    
 
     /* ─── SEARCH BOX ─── */
     .search-container {
@@ -211,7 +194,8 @@
   <!-- Main content (semi-transparent white) -->
   <main>
     <section id="home">
-      <h1>Katibi-Fizyo</h1>
+      <br><br>
+      <h1>Kâtibi-Fizyo</h1>
      
       <!-- ─────────────────────────────────────── SEARCH BOX ──────────────────────────────────────────── -->
       <div class="search-container">
